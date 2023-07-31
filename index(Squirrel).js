@@ -5,16 +5,13 @@ const Squirrel = class {
     this.color = color;
   }
   jump() {
-    if (typeof name !== "string") {
-      throw new TypeError("enter the string");
-    }
     return this.name + " " + "jamping";
   }
   get name() {
     return this.#name;
   }
   set name(name) {
-    if (typeof name !== "string") {
+    if (typeof name !== "string" || name.trimStart() === "") {
       throw new TypeError("enter the string");
     }
     this.#name = name;
@@ -23,7 +20,7 @@ const Squirrel = class {
     return this._color;
   }
   set color(color) {
-    if (typeof color !== "string") {
+    if (typeof color !== "string" || color.trimStart() === "") {
       throw new TypeError("enter the string");
     }
     this._color = color;
@@ -44,6 +41,9 @@ class SquirrelFly extends Squirrel {
   set maximumFlight(maximumFlight) {
     if (typeof maximumFlight !== "number") {
       throw new TypeError("enter the number");
+    }
+    if (Number.isNaN) {
+      throw new TypeError("enter maximumFlight");
     }
     this._maximumFlight = maximumFlight;
   }
