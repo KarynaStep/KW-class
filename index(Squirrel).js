@@ -49,7 +49,7 @@ class SquirrelFly extends Squirrel {
   }
 }
 
-const arrySquirrelWords = ["lost", "call", 'aaa'];
+const arrySquirrelWords = ["lost", "call", "aaa"];
 
 class SquirrelMagic extends SquirrelFly {
   constructor(name, color, maximumFlight, speakWords) {

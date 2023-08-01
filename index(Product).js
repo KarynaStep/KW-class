@@ -1,5 +1,3 @@
-
-
 const Product = class {
   #name;
   #price;
@@ -18,7 +16,7 @@ price: ${this.#price}${this.#currency}
 quantity: ${this.#quantity}`;
   }
   buy(quantityBuy) {
-    if (quantityBuy > this.quantity) {
+    if (quantityBuy > this.#quantity) {
       throw new RangeError(
         "The quantity of goods is more than what is in stock"
       );
@@ -152,7 +150,6 @@ try {
   const virtualProduct = new VirtualProduct("Memory", 120, "$", 30, 160);
   console.log(virtualProduct);
   console.log(virtualProduct.getInformation());
-
 } catch (error) {
   console.log(error.message);
 }
